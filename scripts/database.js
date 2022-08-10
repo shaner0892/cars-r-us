@@ -22,7 +22,8 @@ const database = {
         {id: 2, wheel: "17-inch Pair Radial Black", price: 250},
         {id: 3, wheel: "17-inch Spoke Silver", price: 500},
         {id: 4, wheel: "17-inch Spoke Black", price: 750},
-    ]
+    ],
+    carBuilder: {},
 }
 
 export const getColors = () => {
@@ -39,4 +40,18 @@ export const getTechnologies = () => {
 
 export const getWheels = () => {
     return database.wheels.map(wheel => ({...wheel}))
+}
+
+export const setColor = (id) => {
+    database.carBuilder.colorId = id
+}
+
+export const setInterior = (id) => {
+    database.carBuilder.interiorId = id
+}
+export const setTechnology = (id) => {
+    database.carBuilder.technologyId = id
+}
+export const setWheel = (id) => {
+    database.carBuilder.wheelId = id
 }
