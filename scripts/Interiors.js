@@ -5,23 +5,24 @@ const interiors = getInteriors()
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "interior") {
+        if (event.target.id === "interior") {
+            window.alert(`User chose interior ${event.target.value}`)
             setInterior(parseInt(event.target.value))
         }
     }
 )
 
 export const Interiors = () => {
-    let html = "<ul>"
-
-    const listItems = interiors.map(interior => {
-        return `<li>
-        <input type="radio" name="interior" value="${interior.id}"/> ${interior.interior}
-        </li>`
-    })
-
-    html += listItems.join("")
-    html += "</ul>"
-
-    return html
+    return `<h2>Interiors</h2>
+        <select id="interior">
+            <option value="0">Select a interior package</option>
+            ${
+                interiors.map(
+                    (interior) => {
+                        return `<option value="${interior.id}">${interior.interior}</option>`
+                    }
+                ).join("")
+            }
+        </select>
+    `
 }

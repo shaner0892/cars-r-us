@@ -3,6 +3,15 @@ import { Interiors } from "./Interiors";
 import { Technologies } from "./Technologies";
 import { Wheels } from "./Wheels";
 
+// document.addEventListener(
+//     "click",
+//     (clickEvent) => {
+//         const itemClicked = clickEvent.target
+//         if (itemClicked.id.startsWith("orderButton")) {
+//             `${addCustomOrder()}`
+//         }
+//     }
+// )
 
 export const CarsRUs = () => {
     return `

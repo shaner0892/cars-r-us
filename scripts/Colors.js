@@ -5,23 +5,24 @@ const colors = getColors()
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "color") {
+        if (event.target.id === "color") {
+            window.alert(`User chose color ${event.target.value}`)
             setColor(parseInt(event.target.value))
         }
     }
 )
 
 export const Colors = () => {
-    let html = "<ul>"
-
-    const listItems = colors.map(color => {
-        return `<li>
-        <input type="radio" name="color" value="${color.id}"/> ${color.color}
-        </li>`
-    })
-
-    html += listItems.join("")
-    html += "</ul>"
-
-    return html
+    return `<h2>Colors</h2>
+        <select id="color">
+            <option value="0">Select a color</option>
+            ${
+                colors.map(
+                    (color) => {
+                        return `<option value="${color.id}">${color.color}</option>`
+                    }
+                ).join("")
+            }
+        </select>
+    `
 }

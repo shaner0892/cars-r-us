@@ -5,23 +5,24 @@ const technologies = getTechnologies()
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "technology") {
+        if (event.target.id === "tech") {
+            window.alert(`User chose technology ${event.target.value}`)
             setTechnology(parseInt(event.target.value))
         }
     }
 )
 
 export const Technologies = () => {
-    let html = "<ul>"
-
-    const listItems = technologies.map(technology => {
-        return `<li>
-        <input type="radio" name="technology" value="${technology.id}"/> ${technology.technology}
-        </li>`
-    })
-
-    html += listItems.join("")
-    html += "</ul>"
-
-    return html
+    return `<h2>Technologies</h2>
+        <select id="tech">
+            <option value="0">Select a technology package</option>
+            ${
+                technologies.map(
+                    (tech) => {
+                        return `<option value="${tech.id}">${tech.technology}</option>`
+                    }
+                ).join("")
+            }
+        </select>
+    `
 }
