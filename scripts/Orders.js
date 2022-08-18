@@ -1,6 +1,6 @@
 import { getColors, getInteriors, getTechnologies, getWheels } from "./database.js";
 
-const carBuilder = (order) => {
+export const carBuilder = (order) => {
     const colors = getColors()
     const interiors = getInteriors()
     const technologies = getTechnologies()

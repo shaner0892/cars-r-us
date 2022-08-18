@@ -2,6 +2,7 @@ import { Colors } from "./Colors";
 import { Interiors } from "./Interiors";
 import { Technologies } from "./Technologies";
 import { Wheels } from "./Wheels";
+import { VehicleTypes } from "./VehicleTypes";
 
 // document.addEventListener(
 //     "click",
@@ -18,6 +19,10 @@ export const CarsRUs = () => {
     <h1>Cars R Us</h1>
     
     <article class="choices">
+        <section class="choices__vehicleTypes">
+            <h2>VehicleTypes</h2>
+            ${VehicleTypes()}
+        </section>
         <section class="choices__colors">
             <h2>Colors</h2>
             ${Colors()}
